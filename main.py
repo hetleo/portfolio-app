@@ -5,16 +5,7 @@ st.set_page_config(layout="wide")
 
 col1, col2 = st.columns([1,3])
 
-style = """
-<style>
-div[data-testid="st.Image"]{
-  float: right;
-}
-</style>
-"""
-
 with col1:
-    st.markdown(style, unsafe_allow_html=True)
     st.image("images/photo.png", width=150)
 
 with col2:
@@ -35,14 +26,24 @@ Du kan trykke på Source Code for å komme til koden på Github.
 """
 st.write(content2)
 
-col3, col4 = st.columns(2)
+st.divider()
+
+col3, empty_col, col4 = st.columns([1.5, 0.3,1.5])
 
 df = pandas.read_csv("data.csv", sep=";")
 
 with col3:
     for index, row in df[:10].iterrows():
+        st.image("images/" + row["image"], width=150)
         st.header(row["title"])
+        st.write(row["description"])
+        st.write("[Source code on Github](https://github.com/hetleo)")
+        st.divider()
  
 with col4:
     for index, row in df[11:].iterrows():
+        st.image("images/" + row["image"], width=150)
         st.header(row["title"])
+        st.write(row["description"])
+        st.write(f"[Source code on Github]({row['url']})")
+        st.divider()
