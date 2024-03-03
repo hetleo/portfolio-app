@@ -13,8 +13,8 @@ with col2:
     content = """
 Hei!
 
-Jeg er Leon, og dette mitt lille hjørne av internett. Denne siden bruker jeg 
-til å teste forskjellige programmeringsprosjekt. 
+Jeg er Leon, og dette mitt lille hjørne av internett. Her vil jeg 
+legge ut forskjellige programmeringsprosjekt.
 
 Er du nysgjerrig? Ta en titt og bli med på eventyret!
 """
